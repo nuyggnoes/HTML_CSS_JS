@@ -1,0 +1,137 @@
+input:focus{
+    outline: none;
+}
+.hidden{
+    display: none;
+}
+
+.nav { 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    box-shadow: inset 0 -1px 0 #f6f6f6;
+}
+.nav .nav-container{
+    display:flex;
+    height: 70px;
+    max-width: 1640px;
+    padding: 10px 25px;
+    margin: auto;
+}
+
+.nav .nav-container .nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav .nav-container .nav-logo i{
+    font-size: 40px;
+}
+.nav .nav-container .nav-logo .nav-logo-text{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.nav .nav-container .nav-list{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: end;
+    margin-left: auto;
+}
+.nav .nav-container .nav-list .nav-item{
+    margin: 0px 12px;
+}
+.nav .nav-container .nav-list .nav-item .nav-text{
+    color: grey;
+    font-size: 15px;
+    font-weight: 500;
+}
+.nav .nav-container .nav-list .nav-item .nav-text:hover{
+    color: black;
+}
+.nav .nav-container .nav-list .nav-item-downloadBtn{
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 40px;
+    background: black;
+    border-radius: 8px;
+    padding: 0px 14px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 12px;
+}
+.nav .nav-container .nav-list .nav-item-downloadBtn:hover{
+    opacity: 0.8;
+}
+
+
+
+.main-screen{
+    background-color: #e4e9f7;
+    height: 100vh;
+    margin-top: 70px;
+    padding: 0px 100px;
+}
+.main-screen .title-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+.main-screen .title-container .login{
+    width: 100%;
+    padding: 0 35px ;
+    max-width: 900px;
+}
+.main-screen .title-container .login .login-form{
+    width: 100%;
+}
+.main-screen .title-container .login input{
+    background-color: #e4e9f7;
+    border: none;
+    font-size: 30px;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #aeaeae;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+.main-screen .title-container .login input:focus{
+    background-color: white;
+    border-radius: 8px;
+}
+
+.main-screen .title-container .login button{
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    height: 50px;
+}
+
+.main-screen .title-container .greeting{
+    font-size: 40px;
+}
+
+.main-screen .todo-container h1{
+    font-size: 60px;
+    text-align: center;
+}
+.main-screen .todo-container .todo-form{
+    display: flex;
+}
+.main-screen .todo-container .todo-form input{
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+}
+.main-screen .todo-container .todo-form button{
+    width: 60px;
+}

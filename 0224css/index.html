@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Boxicons : web clone</title>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="bx bxs-cube"></i>
+          <a href="#" class="nav-logo-text">Boxicons</a>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="https://github.com/nuyggnoes" target="_blank" class="nav-text">Github</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.youtube.com" target="_blank" class="nav-text">Usage</a>
+          </li>
+          <li>
+            <div class="nav-item-downloadBtn">
+              <a href="#">Download v2.1.4</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main class="main-screen">
+      <div class="title-container">
+        <div class="title-box">
+          <h1>High Quality Web Icons</h1>
+          <h3>Simple Open Source icons carefully crafted for designers & developers</h3>
+        </div>
+      </div>
+      <div class="option-container">
+        <div class="ad">
+          <div class="ad-section">
+            <div class="ad-card">
+              <a href="#">
+                <img src="img/adimg.png" alt="" />
+              </a>
+              <div class="ad-card-right">
+                <a href="#" class="ad-text">
+                  Get 10 free Adobe Stock photos. Start downloading amazing royalty-free stock photos today.
+                </a>
+                <a href="#" class="ad-btn">ADS VIA CARBON</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search-container">
+          <div class="search-icon">
+            <label for="search">
+              <i class="bx bx-search"></i>
+            </label>
+          </div>
+          <div class="search-bar">
+            <input id="search" type="text" placeholder="Search icons..." />
+          </div>
+        </div>
+        <div class="search-filter">
+          <select name="filter" id="filter">
+            <option>All Categories</option>
+            <option>Accessibility</option>
+            <option>Alert</option>
+            <option>Animals</option>
+            <option>Arrows</option>
+            <option>Brands</option>
+            <option>Building</option>
+          </select>
+          <div class="icon-count">1634 of 1634 icons</div>
+          <div class="filter-btn">
+            <ul>
+              <li class="filter-btn-item filter-btn-selected">All</li>
+              <li class="filter-btn-item">Regular</li>
+              <li class="filter-btn-item">Solid</li>
+              <li class="filter-btn-item">Logos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="search-result-container">
+        <div class="grid-container"></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <ul class="footer-list">
+          <li class="footer-list-item">
+            <a href="#">Cheatsheet</a>
+          </li>
+          <li class="footer-list-item">
+            <a href="#">Request Icons</a>
+          </li>
+          <li class="footer-list-item">
+            <a href="#">License</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-logo">
+        <div class="footer-logo-icon">
+          <i class="bx bxl-javascript"></i>
+        </div>
+        <div class="footer-logo-text">
+          <div>A T I S A</div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      let gridContainer = document.querySelector(".grid-container");
+      let filterBtnList = document.querySelectorAll(".filter-btn-item");
+
+      for (let i = 0; i < filterBtnList.length; i++) {
+        filterBtnList[i].addEventListener("click", function () {
+          for (let j = 0; j < filterBtnList.length; j++) {
+            if (filterBtnList[j] === this) {
+              filterBtnList[j].classList.add("filter-btn-selected");
+            } else {
+              filterBtnList[j].classList.remove("filter-btn-selected");
+            }
+          }
+        });
+      }
+      function generateRandomColor() {
+        let red = Math.floor(Math.random() * 256);
+        let green = Math.floor(Math.random() * 256);
+        let blue = Math.floor(Math.random() * 256);
+
+        return "rgb(" + red + ", " + green + ", " + blue + ")";
+      }
+
+      for (let i = 1; i <= 120; i++) {
+        let gridItem = document.createElement("div");
+        let gridText = document.createElement("div");
+        let tmpDiv = document.createElement("div");
+        let gridColorBox = document.createElement("div");
+        gridItem.style.display = "flex";
+        gridItem.style.flexDirection = "column";
+        gridItem.style.padding = "15px 0";
+        gridItem.style.border = "1px solid white";
+        gridItem.style.maxWidth = "109px";
+        gridItem.style.maxHeight = "109px";
+        tmpDiv.style.display = "flex";
+        tmpDiv.style.alignItems = "center";
+        tmpDiv.style.justifyContent = "center";
+        gridColorBox.style.borderRadius = "10px";
+        gridColorBox.style.height = "35px";
+        gridColorBox.style.width = "35px";
+        gridColorBox.style.backgroundColor = generateRandomColor();
+        gridColorBox.style.marginBottom = "18px";
+        gridText.textContent = i;
+        gridText.style.textAlign = "center";
+        gridItem.classList.add("grid-item");
+        tmpDiv.appendChild(gridColorBox);
+        gridItem.appendChild(tmpDiv);
+        gridItem.appendChild(gridText);
+        gridContainer.appendChild(gridItem);
+
+        gridItem.addEventListener("mouseenter", function () {
+          gridItem.style.border = "1px solid #f2f2f2";
+          gridItem.style.borderRadius = "8px";
+        });
+        gridItem.addEventListener("mouseleave", function () {
+          gridItem.style.border = "1px solid white";
+        });
+      }
+    </script>
+  </body>
+</html>

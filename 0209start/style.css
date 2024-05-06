@@ -1,0 +1,117 @@
+.nav{
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    position: fixed;
+}
+.nav .container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.container{
+    position: relative;
+    padding-inline: 15px;
+    margin-inline: auto;
+}
+.nav .nav__logo{
+    display: flex;
+    padding: 30px;
+    color: #1C54E4;
+    font-size: 50px;
+    font-weight: bolder;
+}
+.nav .nav__main{
+    display: flex;
+    justify-content: space-around;
+    align-self: stretch;
+}
+.nav .nav__menu{
+    display: flex;
+    align-items: center;
+    gap: clamp(15px, 1.85vw, 40px);
+    align-self: stretch;
+    font-size: 35px;
+    font-weight: 500;
+}
+.nav .nav__item{
+    position: relative;
+    display: flex;
+}
+
+.nav .nav__item > .btn{
+    border: 1px solid #1C54E4;
+    color: #1C54E4;
+    padding: 12px;
+    border-radius: 8px;
+    flex-flow: row wrap;
+}
+
+
+.nav .nav__right{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.nav .nav__right .user__service{
+    display: flex;
+    margin: 10px;
+    color: grey;
+    font-size: 23px;
+}
+
+.header__toggle{
+    display: flex;
+    padding-inline: 15px;
+    padding-block: 5px;
+    font-size: 23px;
+    border: 1px solid lightgrey;
+}
+
+
+.main__screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+.title__box{
+    position: relative;
+    text-align: center;
+    
+    height: 1000px;
+}
+.main__screen .blue__title{
+    margin-bottom: 22px;
+    color: #1C54E4;
+    font-weight: 600;
+    font-size: 40px;
+}
+.main__screen .main__title{
+    font-weight: 700;
+    font-size: 100px;
+    font-weight: 700;
+}
+.main__screen .sub__title{
+    margin-top: 25px;
+    margin-bottom: 55px;
+    font-size: 40px;
+}
+.main__screen .blue__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    font-size: 35px;
+    color: white;
+    height: 120px;
+    width: 400px;
+    background-color: #1C54E4;
+    border-radius: 8px;
+}

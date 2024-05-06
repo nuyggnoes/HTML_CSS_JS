@@ -1,0 +1,62 @@
+header{
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 20px 100px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+}
+
+.sidebar{
+    display: none;
+}
+
+.logo{
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+}
+.navbar a{
+    position: relative;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navbar a:hover::before{
+    background: white;
+}
+
+.navbar a::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transition: 0.3s;
+}
+
+
+@media screen and (max-width: 900px) {
+    .logo{
+        position: absolute;
+        left: 45%;
+    }
+    .navbar{
+        display: none;
+    }
+    .sidebar{
+        display: flex;
+        position: absolute;
+        left: 15px;
+        cursor: pointer;
+    }
+    .sidebar svg{
+        fill: white;
+        width: 30px;
+    }
+
+}

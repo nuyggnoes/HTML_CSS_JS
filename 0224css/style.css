@@ -1,0 +1,352 @@
+.nav { 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    box-shadow: inset 0 -1px 0 #f6f6f6;
+}
+.nav .nav-container{
+    display:flex;
+    height: 70px;
+    max-width: 1640px;
+    padding: 10px 25px;
+    margin: auto;
+}
+
+.nav .nav-container .nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav .nav-container .nav-logo i{
+    font-size: 40px;
+}
+.nav .nav-container .nav-logo .nav-logo-text{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.nav .nav-container .nav-list{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: end;
+    margin-left: auto;
+}
+.nav .nav-container .nav-list .nav-item{
+    margin: 0px 12px;
+}
+.nav .nav-container .nav-list .nav-item .nav-text{
+    color: grey;
+    font-size: 15px;
+    font-weight: 500;
+}
+.nav .nav-container .nav-list .nav-item .nav-text:hover{
+    color: black;
+}
+.nav .nav-container .nav-list .nav-item-downloadBtn{
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 40px;
+    background: black;
+    border-radius: 8px;
+    padding: 0px 14px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 12px;
+}
+.nav .nav-container .nav-list .nav-item-downloadBtn:hover{
+    opacity: 0.8;
+}
+
+
+.main-screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:auto;
+    margin-top: 70px;
+    padding: 0px 20px;
+}
+
+.main-screen .title-container{
+    padding-top: 100px;
+    text-align: center;
+    max-width: 1200px;
+}
+.main-screen .title-container .title-box{
+    padding: 0 80px 14px;
+}
+.main-screen .title-container h1{
+    font-size: 90px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 15px;
+}
+.main-screen .title-container h3{
+    font-size: 25px;
+    font-weight: 300;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.main-screen .option-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.main-screen .option-container .ad{
+    display: flex;
+    width: 100%;
+    padding: 20px 0px;
+    justify-content: center;
+}
+.main-screen .option-container .ad-section{
+    display: flex;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+}
+
+.main-screen .option-container .ad-section .ad-card{
+    display: flex;
+}
+
+.main-screen .option-container .ad-section .ad-card img{
+    height: 100px;
+    width: 130px;
+    object-fit: cover;
+}
+.main-screen .option-container .ad-section .ad-card .ad-card-right{
+    display:flex;
+    flex-direction: column;
+}
+.main-screen .option-container .ad-section .ad-card .ad-card-right .ad-text{
+    font-size: 13px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 10px;
+    line-height: 20px;
+}
+.main-screen .option-container .ad-section .ad-card .ad-card-right .ad-btn{
+    font-size: 11px;
+    font-weight: 500;
+    background-color: #f2f2f2;
+    width: fit-content;
+    padding: 3px 5px;
+    border-radius: 3px;
+    margin-left: auto;
+}
+.main-screen .option-container .search-container{
+    display: flex;
+    max-width: 1160px;
+    border: 1px solid #f2f2f2;
+    width: 100%;
+    height: 60px;
+    background-color: #f2f2f2;
+    padding: 14px 20px;
+    border-radius: 10px;
+}
+.main-screen .option-container .search-container:focus-within{
+    background-color: #ffffff;
+    border: 1px solid grey;
+}
+.main-screen .option-container .search-container .search-icon{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: grey;
+    padding-right: 15px;
+}
+.main-screen .option-container .search-container .search-icon label{
+    cursor: pointer;
+}
+.main-screen .option-container .search-container .search-bar{
+    display: flex;
+    width: 100%;
+}
+.main-screen .option-container .search-container .search-bar input{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 600;
+}
+.main-screen .option-container .search-container .search-bar input:focus{
+    background-color: #ffffff;
+}
+.main-screen .option-container .search-container .search-bar input::placeholder{
+    color: #d7d7d7;
+    opacity: 0.5;
+}
+
+.main-screen .option-container .search-filter{
+    display: flex;
+    max-width: 1160px;
+    width: 100%;
+    padding: 14px 0;
+    box-shadow: inset 0 -1px 0 #f6f6f6;
+}
+.main-screen .option-container .search-filter #filter{
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 7px 15px;
+    border-radius: 5px;
+    border: 1px solid #aeaeae;
+}
+.main-screen .option-container .search-filter .icon-count{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 0 20px;
+    color: #aeaeae;
+}
+.main-screen .option-container .search-filter .filter-btn{
+    margin-left: auto;
+}
+.main-screen .option-container .search-filter .filter-btn ul{
+    display: flex; 
+}
+.main-screen .option-container .search-filter .filter-btn .filter-btn-item{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    color: #aeaeae;
+    font-weight: 300;
+    padding: 0 12px;
+}
+.main-screen .option-container .search-filter .filter-btn .filter-btn-item.filter-btn-selected{
+    color: black;
+    font-weight: 500;
+    height: 40px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+}
+.main-screen .search-result-container{
+    display: flex;
+    overflow: auto;
+    max-height: 900px;
+    max-width: 1160px;
+    padding: 50px 30px;
+    width: 100%;
+    scroll-behavior: auto;
+}
+.main-screen .search-result-container::-webkit-scrollbar{
+    display: none;
+}
+
+.main-screen .search-result-container .grid-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 40px;
+}
+.footer{
+    display: flex;
+    height: 70px;
+    width: 100%;
+    border-top: 1px solid #f2f2f2;
+}
+.footer .footer-container{
+    display: flex;
+}
+.footer .footer-container .footer-list{
+    display: flex;
+    height: 100%;
+}
+.footer .footer-container .footer-list .footer-list-item{
+    padding: 10px;
+    margin: 10px;
+    color: grey;
+    opacity: 0.5;
+    font-weight: 600;
+    font-size: 13px;
+}
+.footer .footer-container .footer-list .footer-list-item:hover{
+    opacity: 1;
+}
+.footer .footer-logo{
+    display: flex;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.footer .footer-logo .footer-logo-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .footer-logo .footer-logo-icon i{
+    color:#aeaeae;
+    font-size: 35px;
+    padding-right: 10px;
+}
+.footer .footer-logo .footer-logo-text{
+    display: flex;
+    color: #aeaeae;
+    font-weight: 600;
+    margin-right: 25px;
+}
+.footer .footer-logo .footer-logo-text > div{
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 770px) {
+    .nav .nav-container .nav-list .nav-item,
+    .main-screen .option-container .search-filter .icon-count
+    {
+        display: none;
+    }
+    .main-screen .title-container h1{
+        font-size: 45px;
+        font-weight: 500;
+    }
+    .main-screen .title-container h3{
+        font-size: 18px;
+    }
+
+}
+@media screen and (max-width: 550px) {
+    .nav .nav-container .nav-logo i{
+        font-size: 35px;
+    }
+    .nav .nav-container .nav-logo .nav-logo-text{
+        font-size: 24px;
+    }
+    .nav .nav-container .nav-list .nav-item-downloadBtn{
+        height: 35px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .main-screen .title-container h1{
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .main-screen .title-container h3{
+        font-size: 13px;
+    }
+    .main-screen .option-container .search-filter #filter,
+    .footer .footer-container{
+        display: none;
+    }
+    .main-screen .option-container .search-filter .filter-btn{
+        margin: 0;
+    }
+    .main-screen .option-container .search-filter .filter-btn .filter-btn-item{
+        font-size: 12px;
+    }
+    .main-screen .option-container .search-filter .filter-btn .filter-btn-item.filter-btn-selected{
+        height: 30px;
+    }
+    .footer .footer-logo{
+        margin-left:40%;
+    }
+    
+
+}
