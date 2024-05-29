@@ -2,6 +2,8 @@ const toDoForm = document.querySelector("#todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.querySelector("#todo-list");
 
+let toDoBox = [];
+
 function addToDo(event) {
   event.preventDefault();
   const newToDo = toDoInput.value;
@@ -11,6 +13,7 @@ function addToDo(event) {
     id: Date.now(),
   };
   // local storage에 저장해서 새로고침해도 데이터가 안 날아가게 처리(나중에)
+  saveToDo();
   // 화면에 뿌리기
   paintToDo(newToDoObj);
 }
