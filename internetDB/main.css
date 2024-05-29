@@ -28,6 +28,7 @@
 .nav .nav-container .nav-logo .nav-logo-text{
     font-size: 28px;
     font-weight: 600;
+    
 }
 
 .nav .nav-container .nav-list{
@@ -101,11 +102,66 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:100vh;
     margin-top: 70px;
     padding: 0px 20px;
 }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+.card-container{
+    display: flex;
+    width: 430px;
+    padding: 15px;
+    margin: 15px;
+    cursor: pointer;
+}
+.card-container:hover{
+    background-color: #f2f2f2;
+}
+.card-container .img-container{
+    margin-right: 18px;
+}
+.card-container .img-container img{
+    width: 250px;
+    height: 250px;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
+.text-container .store-rating{
+    color: #FF6A00;
+    font-size: 35px;
+    font-weight: 800;
+}
+.text-container .store-title{
+    font-size: 35px;
+    font-weight: 700;
+}
+.text-container .store-location{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+.text-container .store-menu {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    
+}
+.store-review i, .store-review span{
+    color: #aeaeae;
+}
 
 /* footer */
 
