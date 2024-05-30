@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DETAIL</title>
+    <link rel="stylesheet" href="detail.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="nav">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="bx bxs-cube"></i>
+          <a href="#" class="nav-logo-text">MainLogo</a>
+        </div>
+        <div class="search-container">
+          <div class="search-bar">
+            <input id="search" type="text" placeholder="검색" />
+          </div>
+          <form method="get">
+            <button class="search-icon" type="submit">
+              <label for="search">
+                <i class="bx bx-search"></i>
+              </label>
+            </button>
+          </form>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#" target="_blank" class="nav-text">로그인</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" target="_blank" class="nav-text">회원가입</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main class="main-screen">
+      <div class="slider-container">
+        <button class="slider-button left" onclick="slideToPrevImage()">&#10094;</button>
+        <div class="slider">
+          <div class="slider-track">
+            <img src="./img/하이바 경성대점.png" />
+            <img src="./img/cat1.png" />
+            <img src="./img/analysis.png" />
+            <img src="./img/building.png" />
+          </div>
+        </div>
+        <button class="slider-button right" onclick="slideToNextImage()">&#10095;</button>
+      </div>
+      <div class="content-container">
+        <div class="store-title-container">
+          <div class="store-title-rating">
+            <div>하이바 경성대점</div>
+            <div class="store-rating">4.2</div>
+          </div>
+          <div class="store-category-container">
+            <div class="store-category">#카테고리</div>
+            <div class="store-category">#카테고리</div>
+          </div>
+          <div class="review-count">
+            <a href="#" id="review-link"><i class="bx bxs-star"></i>12</a>
+          </div>
+        </div>
+        <div style="width: 100px; height: 500px; background-color: yellow">hi</div>
+        <div style="width: 100px; height: 500px; background-color: yellow">hi</div>
+        <div style="width: 100px; height: 500px; background-color: yellow">hi</div>
+        <div style="width: 100px; height: 500px; background-color: yellow">hi</div>
+        <div id="review" style="width: 100px; height: 500px; background-color: yellow">review</div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <ul class="footer-list">
+          <li class="footer-list-item">
+            <a href="#">인터넷DB응용 4팀</a>
+          </li>
+          <li class="footer-list-item">
+            <a href="#">공재성</a>
+          </li>
+          <li class="footer-list-item">
+            <a href="#">임성균</a>
+          </li>
+          <li class="footer-list-item">
+            <a href="#">최지인</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-logo">
+        <div class="footer-logo-icon">
+          <i class="bx bxl-microsoft"></i>
+        </div>
+        <div class="footer-logo-text">
+          <div>InternetDB</div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const sliderTrack = document.querySelector(".slider-track");
+      const images = document.querySelectorAll(".slider img");
+      const imageCount = images.length;
+      const imageWidth = images[0].clientWidth;
+      let currentIndex = 0;
+
+      function slideToNextImage() {
+        currentIndex++;
+        if (currentIndex >= imageCount) {
+          currentIndex = 0;
+        }
+        updateSliderPosition();
+      }
+
+      function slideToPrevImage() {
+        currentIndex--;
+        if (currentIndex < 0) {
+          currentIndex = imageCount - 1;
+        }
+        updateSliderPosition();
+      }
+
+      function updateSliderPosition() {
+        const offset = -currentIndex * imageWidth;
+        sliderTrack.style.transform = `translateX(${offset}px)`;
+      }
+
+      window.addEventListener("resize", () => {
+        imageWidth = images[0].clientWidth;
+        updateSliderPosition();
+      });
+      document.getElementById("review-link").addEventListener("click", function (event) {
+        event.preventDefault(); // 링크의 기본 동작을 막음
+        document.getElementById("review").scrollIntoView({ behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
