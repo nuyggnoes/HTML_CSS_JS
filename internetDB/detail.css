@@ -1,9 +1,7 @@
 @import url('reset.css');
 @import url('header.css');
 @import url('footer.css');
-*{
-    box-sizing: border-box;
-}
+
 .main-screen {
     display: flex;
     /* justify-content: center; */
@@ -131,6 +129,7 @@
 }
 .review-item-container{
     padding-top: 20px;
+    margin-bottom: 20px;
 }
 .review-item-title{
     display: flex;
@@ -189,9 +188,12 @@
 }
 #myform input[type=submit]{
     width: 100%;
+    cursor: pointer;
     border: none;
     padding: 15px 0px;
     color: white;
+    font-size: 1em;
+    font-weight: 600;
     background-color: #FF6A00;
     border-radius: 10px;
 }
