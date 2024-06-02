@@ -11,7 +11,7 @@
   <body>
     <header class="nav">
       <div class="nav-container">
-        <div class="nav-logo">
+        <div class="nav-logo" onclick="goMain()">
           <i class="bx bxs-cube"></i>
           <a href="#" class="nav-logo-text">MainLogo</a>
         </div>
@@ -61,14 +61,67 @@
             <div class="store-category">#카테고리</div>
           </div>
           <div class="review-count">
-            <a href="#" id="review-link"><i class="bx bxs-star"></i>12</a>
+            <a href="#" id="review-link"><i class="bx bxs-star"></i>1</a>
           </div>
         </div>
-        <div style="width: 100px; height: 500px; background-color: yellow">hi</div>
-        <div style="width: 100px; height: 500px; background-color: yellow">hi</div>
-        <div style="width: 100px; height: 500px; background-color: yellow">hi</div>
-        <div style="width: 100px; height: 500px; background-color: yellow">hi</div>
-        <div id="review" style="width: 100px; height: 500px; background-color: yellow">review</div>
+        <div id="map" style="width: 100%; height: 400px"></div>
+        <div class="store-description-container">
+          <h1>매장 소개</h1>
+          <p>
+            '하이볼 단 하나만 생각합니다' 오직 하이볼만을 생각하고 고민하여 만든 하이바(Haiba)만의 감성과 철학을 담아
+            하이볼 바라기가 만든 하이볼 전문점, 하이바입니다.
+          </p>
+        </div>
+        <div class="review-list-container" id="review">
+          <div class="review-title">
+            <h1>리뷰(1)</h1>
+            <span>리뷰 작성하기</span>
+          </div>
+          <div class="review-list">
+            <div class="review-item-container">
+              <div class="review-item-title">
+                <div id="nickname">pknu1234</div>
+                <div class="rating">
+                  <i id="rate1" class="bx bxs-star"></i>
+                  <i id="rate2" class="bx bxs-star"></i>
+                  <i id="rate3" class="bx bxs-star"></i>
+                  <i id="rate4" class="bx bxs-star"></i>
+                  <i id="rate5" class="bx bxs-star"></i>
+                </div>
+              </div>
+              <div class="review-item-content">
+                하이볼도 맛있었구요!!에그인헬도 맛있었어요!! 매장도 깔끔 깨끗했고 화장실도 깨끗해서 좋았어요!!
+                직원분들도 엄청 친절하셨어요😊 밥을 먹고 2차로 가서 간단히 먹었는데 넘 좋더라구요~! 다음에 다른 메뉴
+                맛보러 다시 방문해야겠어요!
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="review-write-container">
+          <div class="review-title">
+            <h1>리뷰 작성하기</h1>
+          </div>
+          <div>
+            <form class="mb-3" name="myform" id="myform" method="post">
+              <fieldset>
+                <span class="text-bold">별점을 선택해주세요</span>
+                <input type="radio" name="reviewStar" value="5" id="rate1" /><label for="rate1">★</label>
+                <input type="radio" name="reviewStar" value="4" id="rate2" /><label for="rate2">★</label>
+                <input type="radio" name="reviewStar" value="3" id="rate3" /><label for="rate3">★</label>
+                <input type="radio" name="reviewStar" value="2" id="rate4" /><label for="rate4">★</label>
+                <input type="radio" name="reviewStar" value="1" id="rate5" /><label for="rate5">★</label>
+              </fieldset>
+              <div>
+                <textarea
+                  class="col-auto form-control"
+                  type="text"
+                  id="reviewContents"
+                  placeholder="좋은 리뷰를 남겨주시면 가게에 큰 힘이 됩니다."></textarea>
+              </div>
+              <input type="submit" />
+            </form>
+          </div>
+        </div>
       </div>
     </main>
     <footer class="footer">
@@ -97,6 +150,9 @@
         </div>
       </div>
     </footer>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f8f6f6817f7cfcd384bc8e7e9378fb1a"></script>
     <script>
       const sliderTrack = document.querySelector(".slider-track");
       const images = document.querySelectorAll(".slider img");
@@ -130,9 +186,36 @@
         updateSliderPosition();
       });
       document.getElementById("review-link").addEventListener("click", function (event) {
-        event.preventDefault(); // 링크의 기본 동작을 막음
+        event.preventDefault();
         document.getElementById("review").scrollIntoView({ behavior: "smooth" });
       });
+      // kakao map 추가
+      // 지도를 초기화하는 함수
+      var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+        mapOption = {
+          center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+          level: 3, // 지도의 확대 레벨
+        };
+
+      // 지도를 생성
+      var map = new kakao.maps.Map(mapContainer, mapOption);
+
+      // 마커를 생성
+      var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+      var marker = new kakao.maps.Marker({
+        position: markerPosition,
+      });
+
+      // 마커를 지도에 표시
+      marker.setMap(map);
+
+      const goMain = () => {
+        window.location.href = "main.html";
+      };
+      // 별점
+
+      const ratingStars = [...document.querySelectorAll(".rating__star")];
+      console.log(ratingStars);
     </script>
   </body>
 </html>
