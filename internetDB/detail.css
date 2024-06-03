@@ -144,37 +144,14 @@
 .review-item-title .rating i{
     color: rgba(250, 208, 0, 0.99);
 }
-/* ex */
-#myform fieldset{
-    display: flex;
-    justify-content: end;
+/* rating form */
+#rating-form .rating-field{
+    display: flex; 
     align-items: center;
-    direction: rtl;
-    border:0;
+    margin-bottom: 10px;
 }
-#myform fieldset span{
-    margin-left: 20px;
-}
-#myform fieldset legend{
-    text-align: right;
-}
-#myform input[type=radio]{
-    display: none;
-}
-#myform label{
-    font-size: 3em;
-    color: transparent;
-    cursor: pointer;
-    text-shadow: 0 0 0 #f0f0f0;
-}
-#myform label:hover{
-    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
-}
-#myform label:hover ~ label{
-    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
-}
-#myform input[type=radio]:checked ~ label{
-    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+#rating-form .rating-field .star-rating{
+    margin-right: 10px;
 }
 #reviewContents {
     width: 100%;
@@ -186,7 +163,7 @@
     font-size: 16px;
     resize: none;
 }
-#myform input[type=submit]{
+#rating-form input[type=submit]{
     width: 100%;
     cursor: pointer;
     border: none;
@@ -197,3 +174,17 @@
     background-color: #FF6A00;
     border-radius: 10px;
 }
+.star-rating span {
+    font-size: 2em;
+    cursor: pointer;
+    color: lightgray;
+  }
+  
+  .star-rating span.selected {
+    color: gold;
+  }
+  
+  .star-rating span:hover,
+  .star-rating span:hover ~ span {
+    color: gold;
+  }

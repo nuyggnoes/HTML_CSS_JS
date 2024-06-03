@@ -16,10 +16,10 @@
           <a href="#" class="nav-logo-text">MainLogo</a>
         </div>
         <div class="search-container">
-          <div class="search-bar">
-            <input id="search" type="text" placeholder="검색" />
-          </div>
           <form method="get">
+            <div class="search-bar">
+              <input id="search" type="text" placeholder="검색" />
+            </div>
             <button class="search-icon" type="submit">
               <label for="search">
                 <i class="bx bx-search"></i>
@@ -37,15 +37,24 @@
         </ul>
       </div>
     </header>
+    <div class="banner-container">
+      <img src="./img/pknu2.png" />
+      <div class="banner-overlay">banner</div>
+    </div>
     <main class="main-screen">
       <div class="category-list-container">
+        <!-- <div class="category-box">#main.html</div>
         <div class="category-box">#카테고리</div>
         <div class="category-box">#카테고리</div>
         <div class="category-box">#카테고리</div>
         <div class="category-box">#카테고리</div>
-        <div class="category-box">#카테고리</div>
-        <div class="category-box">#카테고리</div>
+        <div class="category-box">#카테고리</div> -->
+        <div class="category-v2">#main.html</div>
+        <div class="category-v2">#카테고리</div>
+        <div class="category-v2">#카테고리</div>
+        <div class="category-v2">#카테고리</div>
       </div>
+
       <div class="grid-container">
         <div onclick="goDetail()" class="new-card-container">
           <img src="./img/하이바 경성대점.png" />
@@ -155,6 +164,14 @@
       const categoryBoxes = document.querySelectorAll(".category-box");
 
       categoryBoxes.forEach((box) => {
+        box.addEventListener("click", (event) => {
+          console.log(event.target.innerText);
+          box.classList.toggle("active");
+        });
+      });
+      const categoryBoxes2 = document.querySelectorAll(".category-v2");
+
+      categoryBoxes2.forEach((box) => {
         box.addEventListener("click", (event) => {
           console.log(event.target.innerText);
           box.classList.toggle("active");

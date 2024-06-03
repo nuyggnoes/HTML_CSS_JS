@@ -16,10 +16,11 @@
           <a href="#" class="nav-logo-text">MainLogo</a>
         </div>
         <div class="search-container">
-          <div class="search-bar">
-            <input id="search" type="text" placeholder="검색" />
-          </div>
           <form method="get">
+            <div class="search-bar">
+              <input id="search" type="text" placeholder="검색" />
+            </div>
+
             <button class="search-icon" type="submit">
               <label for="search">
                 <i class="bx bx-search"></i>
@@ -68,7 +69,7 @@
         <div class="store-description-container">
           <h1>매장 소개</h1>
           <p>
-            '하이볼 단 하나만 생각합니다' 오직 하이볼만을 생각하고 고민하여 만든 하이바(Haiba)만의 감성과 철학을 담아
+            하이볼 단 하나만 생각합니다' 오직 하이볼만을 생각하고 고민하여 만든 하이바(Haiba)만의 감성과 철학을 담아
             하이볼 바라기가 만든 하이볼 전문점, 하이바입니다.
           </p>
         </div>
@@ -136,23 +137,26 @@
             <h1>리뷰 작성하기</h1>
           </div>
           <div>
-            <form class="mb-3" name="myform" id="myform" method="post">
-              <fieldset>
-                <span class="text-bold">별점을 선택해주세요</span>
-                <input type="radio" name="reviewStar" value="5" id="rate1" /><label for="rate1">★</label>
-                <input type="radio" name="reviewStar" value="4" id="rate2" /><label for="rate2">★</label>
-                <input type="radio" name="reviewStar" value="3" id="rate3" /><label for="rate3">★</label>
-                <input type="radio" name="reviewStar" value="2" id="rate4" /><label for="rate4">★</label>
-                <input type="radio" name="reviewStar" value="1" id="rate5" /><label for="rate5">★</label>
-              </fieldset>
+            <form name="rating-form" id="rating-form" method="post">
+              <div class="rating-field">
+                <div class="star-rating">
+                  <span data-value="1">★</span>
+                  <span data-value="2">★</span>
+                  <span data-value="3">★</span>
+                  <span data-value="4">★</span>
+                  <span data-value="5">★</span>
+                </div>
+                <span class="text-bold">별점을 선택해주세요.</span>
+                <input type="hidden" name="reviewStar" id="reviewStar" value="0" />
+              </div>
               <div>
                 <textarea
-                  class="col-auto form-control"
+                  class="form-control"
                   type="text"
                   id="reviewContents"
                   placeholder="좋은 리뷰를 남겨주시면 가게에 큰 힘이 됩니다."></textarea>
               </div>
-              <input type="submit" value="리뷰 등록하기" />
+              <input type="submit" value="리뷰 등록하기" onclick="testpost()" />
             </form>
           </div>
         </div>
@@ -191,7 +195,7 @@
       const sliderTrack = document.querySelector(".slider-track");
       const images = document.querySelectorAll(".slider img");
       const imageCount = images.length;
-      const imageWidth = images[0].clientWidth;
+      let imageWidth = images[0].clientWidth;
       let currentIndex = 0;
 
       function slideToNextImage() {
@@ -223,33 +227,73 @@
         event.preventDefault();
         document.getElementById("review").scrollIntoView({ behavior: "smooth" });
       });
-      // kakao map 추가
-      // 지도를 초기화하는 함수
-      var mapContainer = document.getElementById("map"), // 지도를 표시할 div
-        mapOption = {
-          center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-          level: 3, // 지도의 확대 레벨
-        };
+      // // kakao map 추가
+      // // 지도를 초기화하는 함수
+      // var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+      //   mapOption = {
+      //     center: new kakao.maps.LatLng(35.1368993, 129.102391), // 지도의 중심좌표
+      //     level: 3, // 지도의 확대 레벨
+      //   };
 
-      // 지도를 생성
-      var map = new kakao.maps.Map(mapContainer, mapOption);
+      // // 지도를 생성
+      // var map = new kakao.maps.Map(mapContainer, mapOption);
 
-      // 마커를 생성
-      var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
-      var marker = new kakao.maps.Marker({
-        position: markerPosition,
-      });
+      // // 마커를 생성
+      // var markerPosition = new kakao.maps.LatLng(35.1368993, 129.102391);
+      // var marker = new kakao.maps.Marker({
+      //   position: markerPosition,
+      // });
 
-      // 마커를 지도에 표시
-      marker.setMap(map);
+      // // 마커를 지도에 표시
+      // marker.setMap(map);
 
       const goMain = () => {
         window.location.href = "main.html";
       };
-      // 별점
 
-      const ratingStars = [...document.querySelectorAll(".rating__star")];
-      console.log(ratingStars);
+      //ver2
+
+      const stars = document.querySelectorAll(".star-rating span");
+      const reviewStarInput = document.querySelector("#reviewStar");
+      stars.forEach((star) => {
+        star.addEventListener("click", function () {
+          const value = this.getAttribute("data-value");
+          resetStars();
+          highlightStars(value);
+          reviewStarInput.value = value;
+          console.log(value);
+        });
+        star.addEventListener("mouseover", function () {
+          const value = this.getAttribute("data-value");
+          resetStars();
+          highlightStars(value);
+        });
+
+        star.addEventListener("mouseout", function () {
+          const selectedValue = reviewStarInput.value;
+          resetStars();
+          highlightStars(selectedValue);
+        });
+      });
+
+      function resetStars() {
+        stars.forEach((star) => {
+          star.classList.remove("selected");
+          star.style.color = "lightgray";
+        });
+      }
+
+      function highlightStars(value) {
+        stars.forEach((star) => {
+          if (star.getAttribute("data-value") <= value) {
+            star.classList.add("selected");
+            star.style.color = "gold";
+          }
+        });
+      }
+      function testpost() {
+        console.log(reviewStarInput.value);
+      }
     </script>
   </body>
 </html>
