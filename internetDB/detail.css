@@ -18,6 +18,7 @@
     background-color: #f3f3f3;
     position: relative;
     width: 100%;
+    height: 300px;
 }
 .slider {
     overflow: hidden;
@@ -92,6 +93,13 @@
     color: grey;
 }
 
+.detail-first{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .store-description-container, 
 .review-list-container,
 .review-write-container{
@@ -101,6 +109,15 @@
     padding: 20px;
     margin-top: 30px;
 }
+.store-description-container{
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    margin-top: 0;
+}
+.store-description-container div:first-child{
+    height: 70%;
+}
 .store-description-container h1,
 .review-list-container h1{
     font-size: 20px;
@@ -108,41 +125,68 @@
 }
 .store-description-container p{
     margin-top: 20px;
+    line-height: 1.8em;
+}
+.store-option-icon div{
+    margin-bottom: 5px;
+}
+.store-option-icon .icon-n-detail i{
+    color: #aeaeae;
+    margin-right: 5px;
 }
 .review-title{
     display: flex;
     width: 100%;
     justify-content: space-between;
     margin-bottom: 15px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #aeaeae;
 }
 .review-title h1{
     font-size: 20px;
     font-weight: 700;
 }
+
+.review-box{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.review-box .rating-statistic{
+    width: 40%;
+}
+.review-list{
+    width: 60%;
+    height: 400px;
+    overflow-y: scroll;
+}
+
 .review-list-container .review-title span{
     color: #FF6A00;
     font-weight: 700;
     cursor: pointer;
 }
-.review-list-container .review-list{
-    border-top: 1px solid #aeaeae;
-}
+
 .review-item-container{
-    padding-top: 20px;
-    margin-bottom: 20px;
+    border: 1px solid #dfdfdf;
+    padding: 20px;
+    margin-bottom: 10px;
 }
 .review-item-title{
     display: flex;
-    width: 20%;
-    justify-content: space-between;
+    width: 100%;
 }
 .review-item-title #nickname{
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 .review-item-title .rating i{
     color: rgba(250, 208, 0, 0.99);
+}
+.review-item-content{
+    line-height: 1.5em;
 }
 /* rating form */
 #rating-form .rating-field{
