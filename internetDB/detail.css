@@ -108,6 +108,7 @@
     width: 100%;
     padding: 20px;
     margin-top: 30px;
+    box-sizing: border-box;
 }
 .store-description-container{
     display: flex;
@@ -155,6 +156,15 @@
 .review-box .rating-statistic{
     width: 40%;
 }
+.review-box .rating-statistic .avg-rating{
+    height: 15%;
+}
+
+.review-box .rating-statistic .avg-rating span,i{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
 .review-list{
     width: 60%;
     height: 400px;
@@ -222,13 +232,18 @@
     font-size: 2em;
     cursor: pointer;
     color: lightgray;
-  }
+}
   
-  .star-rating span.selected {
+.star-rating span.selected {
     color: gold;
-  }
+}
   
-  .star-rating span:hover,
-  .star-rating span:hover ~ span {
+.star-rating span:hover,
+.star-rating span:hover ~ span {
     color: gold;
-  }
+}
+
+  /* 차트 */
+#chartContainer {
+    width: 90%;
+}

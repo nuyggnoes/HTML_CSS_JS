@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="detail.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <header class="nav">
@@ -87,7 +88,15 @@
             <span>리뷰 작성하기</span>
           </div>
           <div class="review-box">
-            <div class="rating-statistic">4.2점</div>
+            <div class="rating-statistic">
+              <div class="avg-rating">
+                <i class="bx bxs-star" style="color: gold"></i>
+                <span>4.2점</span>
+              </div>
+              <div id="chartContainer">
+                <canvas id="ratingChart"></canvas>
+              </div>
+            </div>
             <div class="review-list">
               <div class="review-item-container">
                 <div class="review-item-title">
@@ -305,6 +314,57 @@
       function testpost() {
         console.log(reviewStarInput.value);
       }
+
+      // 차트
+      // 별점 데이터
+      const ratings = [5, 4, 3, 2, 1];
+      const counts = [3, 2, 2, 0, 1]; // 각 별점에 해당하는 개수
+      const ratingLabels = ratings.map((rating) => {
+        return `⭐️ ${rating}`;
+      });
+
+      const canvas = document.getElementById("ratingChart");
+      canvas.width = 800; // 원하는 너비 설정
+      canvas.height = 600;
+
+      // 막대 그래프 그리기
+      const ctx = canvas.getContext("2d");
+      const ratingChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ratingLabels,
+          datasets: [
+            {
+              label: "별점 개수",
+              data: counts,
+              backgroundColor: "gold",
+              borderWidth: 0,
+            },
+          ],
+        },
+        options: {
+          indexAxis: "y",
+          scales: {
+            x: {
+              beginAtZero: true,
+            },
+            y: {
+              offset: true,
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          elements: {
+            bar: {
+              categoryPercentage: 1,
+              barPercentage: 0.5,
+            },
+          },
+        },
+      });
     </script>
   </body>
 </html>
