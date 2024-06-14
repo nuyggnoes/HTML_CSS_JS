@@ -1,9 +1,12 @@
 var express = require("express");
 var app = express();
 const { Sequelize, DataTypes } = require("sequelize");
+const path = require("path");
+const dbPath = path.join(__dirname, "database.sqlite");
+
 const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: "database.sqlite",
+  storage: dbPath,
 });
 
 // let comments = []; // 빈 db... 껐다 켜면 사라지죠?
@@ -17,6 +20,7 @@ const Comments = sequelize.define("Comments", {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // app.get("/", function (req, res) {
 //   res.render("index3", { comments: comments });

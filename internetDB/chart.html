@@ -37,4 +37,29 @@
               backgroundColor: "rgba(54, 162, 235, 0.5)",
               borderColor: "rgba(54, 162, 235, 1)",
               borderWidth: 1,
-    
+            },
+          ],
+        },
+        options: {
+          indexAxis: "y", // 이 옵션을 추가하여 가로 방향 막대 그래프를 생성
+          scales: {
+            x: {
+              beginAtZero: true,
+            },
+          },
+          plugins: {
+            legend: {
+              display: false, // 범례 숨기기
+            },
+          },
+          elements: {
+            bar: {
+              barPercentage: 0.8, // 막대 너비 설정 (1이면 전체 너비 사용)
+              categoryPercentage: 0.9, // 카테고리 너비 설정
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
