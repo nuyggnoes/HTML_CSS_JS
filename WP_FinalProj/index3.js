@@ -19,6 +19,7 @@ const Comments = sequelize.define("Comments", {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/css", express.static(path.join(__dirname, "css")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
