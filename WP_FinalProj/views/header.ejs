@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header-section">
+      <div class="main-header">
+        <div class="left-side"><i class="bx bx-menu"></i></div>
+        <div class="search-container">
+          <form method="get">
+            <div class="search-bar">
+              <input id="searchKeyword" name="searchKeyword" type="text" placeholder="search" />
+            </div>
+            <button class="search-icon" type="submit">
+              <label for="searchKeyword">
+                <i class="bx bx-search"></i>
+              </label>
+            </button>
+          </form>
+        </div>
+        <div class="logo-container">
+          <div class="main-logo">MainLogo</div>
+          <ul class="category-item-list">
+            <li><a href="#">Best</a></li>
+            <li><a href="#">Set-up</a></li>
+            <li><a href="#">Outer</a></li>
+            <li><a href="#">Top</a></li>
+            <li><a href="#">Bottom</a></li>
+            <li><a href="#">Shoes/Acc</a></li>
+          </ul>
+        </div>
+        <div class="cart">
+          <i class="bx bx-cart"></i>
+        </div>
+        <div class="right-side">
+          <i class="bx bx-user"></i>
+        </div>
+      </div>
+    </header>
+    <div class="overlay"></div>
+    <div class="sidebar">
+      <h2>Sidebar Menu</h2>
+      <a href="#">Best</a>
+      <a href="#">Set-up</a>
+      <a href="#">Outer</a>
+      <a href="#">Top</a>
+      <a href="#">Bottom</a>
+      <a href="#">Shoes/Acc</a>
+    </div>
+  </body>
+  <script>
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector(".header-section");
+      const mainLogo = document.querySelector(".main-logo");
+
+      if (window.scrollY > 50) {
+        header.classList.add("shrink");
+        mainLogo.classList.add("shrink");
+      } else {
+        header.classList.remove("shrink");
+        mainLogo.classList.remove("shrink");
+      }
+    });
+    const sidebar = document.querySelector(".sidebar");
+    const overlay = document.querySelector(".overlay");
+    document.querySelector(".left-side").addEventListener("click", () => {
+      overlay.classList.toggle("visible");
+      sidebar.classList.toggle("visible");
+    });
+    document.querySelector(".overlay").addEventListener("click", () => {
+      sidebar.classList.remove("visible");
+      overlay.classList.remove("visible");
+    });
+  </script>
+</html>

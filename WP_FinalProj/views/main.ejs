@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    body {
+      height: 2000px;
+    }
+  </style>
   <body>
+    <%- include('header') %>
+
     <h1>MAIN PAGE</h1>
     <h1><%= title %></h1>
+    <img src="/img/movie.jpg" alt="" style="width: 600px" />
+    Designed by Freepik
+    <script>
+      // document.querySelector(".left-side").addEventListener("click", function () {
+      //   const sidebar = document.querySelector(".sidebar");
+      //   sidebar.classList.toggle("visible");
+      // });
+
+      // document.querySelector(".overlay").addEventListener("click", function () {
+      //   const sidebar = document.querySelector(".sidebar");
+      //   const overlay = document.querySelector(".overlay");
+      //   sidebar.classList.remove("visible");
+      //   overlay.classList.remove("visible");
+      // });
+    </script>
   </body>
 </html>
