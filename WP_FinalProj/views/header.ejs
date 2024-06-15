@@ -44,9 +44,9 @@
       </div>
     </header>
     <div class="overlay"></div>
-    <div class="sidebar">
+    <div class="left-sidebar">
       <h2>Main Logo</h2>
-      <div class="sidebar-category-container">
+      <div class="left-sidebar-category-container">
         <h1>Category</h1>
         <hr />
         <a href="#">Best</a>
@@ -56,7 +56,7 @@
         <a href="#">Bottom</a>
         <a href="#">Shoes/Acc</a>
       </div>
-      <div class="sidebar-bottom">
+      <div class="left-sidebar-bottom">
         <div>
           <h1>CUSTOMER CENTER</h1>
           <hr />
@@ -66,6 +66,19 @@
           mon-fri am09:00-pm07:00<br />
           휴무/토,일요일,공휴일
         </div>
+      </div>
+    </div>
+    <div class="right-sidebar">
+      <h2>MYPAGE</h2>
+      <div class="btn-list-container">
+        <button type="button" class="order-select">
+          <i class="bx bx-cart"></i>
+          장바구니
+        </button>
+        <button type="button" class="order-select">
+          <i class="bx bx-heart"></i>
+          관심상품
+        </button>
       </div>
     </div>
   </body>
@@ -82,15 +95,24 @@
         mainLogo.classList.remove("shrink");
       }
     });
-    const sidebar = document.querySelector(".sidebar");
+    const leftSidebar = document.querySelector(".left-sidebar");
+    const rightSidebar = document.querySelector(".right-sidebar");
     const overlay = document.querySelector(".overlay");
     document.querySelector(".left-side").addEventListener("click", () => {
       overlay.classList.toggle("visible");
-      sidebar.classList.toggle("visible");
+      leftSidebar.classList.toggle("visible");
+    });
+    document.querySelector(".right-side").addEventListener("click", () => {
+      overlay.classList.toggle("visible");
+      rightSidebar.classList.toggle("visible");
     });
     document.querySelector(".overlay").addEventListener("click", () => {
-      sidebar.classList.remove("visible");
+      rightSidebar.classList.remove("visible");
+      leftSidebar.classList.remove("visible");
       overlay.classList.remove("visible");
+    });
+    document.querySelector(".order-select").addEventListener("click", () => {
+      console.log("Order selected");
     });
   </script>
 </html>

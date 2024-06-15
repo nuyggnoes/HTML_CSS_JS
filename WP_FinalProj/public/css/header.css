@@ -4,7 +4,7 @@
     background-color: white;
     width: 100%;
     height: 160px;
-    min-width: 1128px;
+    min-width: 1000px;
     transition: height 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@
     margin-right: 20px;
 }
 
-.sidebar {
+.left-sidebar {
     position: fixed;
     top: 0;
     left: -250px;
@@ -76,24 +76,58 @@
     flex-direction: column;
 }
   
-.sidebar.visible {
+.left-sidebar.visible {
     left: 0;
 }
   
-.sidebar a {
+.left-sidebar a {
     display: block;
     text-decoration: none;
     padding: 10px 0;
 }
-.sidebar-category-container{
+.left-sidebar-category-container{
     margin-top: 40px;
 }
-.sidebar-bottom{
+.left-sidebar-bottom{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
     margin-top: 40px;
+}
+.right-sidebar{
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #e8e8e8;
+    transition: right 0.3s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.right-sidebar.visible {
+    right: 0;
+}
+.right-sidebar .btn-list-container{
+    display: flex;
+    width: 100%;
+}
+.right-sidebar .btn-list-container button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    border-radius: 0;
+    width: 50%;
+    height: 70px;
+}
+.right-sidebar .btn-list-container button i{
+    position: relative;
+    font-size: 30px;
 }
 .overlay {
     position: fixed;

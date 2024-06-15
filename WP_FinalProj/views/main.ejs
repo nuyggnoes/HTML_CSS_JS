@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
     <title>Document</title>
   </head>
   <style>
@@ -12,23 +13,11 @@
   </style>
   <body>
     <%- include('header') %>
-
-    <h1>MAIN PAGE</h1>
-    <h1><%= title %></h1>
-    <img src="/img/movie.jpg" alt="" style="width: 600px" />
-    Designed by Freepik
-    <script>
-      // document.querySelector(".left-side").addEventListener("click", function () {
-      //   const sidebar = document.querySelector(".sidebar");
-      //   sidebar.classList.toggle("visible");
-      // });
-
-      // document.querySelector(".overlay").addEventListener("click", function () {
-      //   const sidebar = document.querySelector(".sidebar");
-      //   const overlay = document.querySelector(".overlay");
-      //   sidebar.classList.remove("visible");
-      //   overlay.classList.remove("visible");
-      // });
-    </script>
+    <main class="main-section">
+      <h1>MAIN PAGE</h1>
+      <h1><%= title %></h1>
+      <img src="/img/movie.jpg" alt="" style="width: 600px" />
+      Designed by Freepik
+    </main>
   </body>
 </html>
