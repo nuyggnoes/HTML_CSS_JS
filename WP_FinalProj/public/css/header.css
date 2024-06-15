@@ -13,6 +13,7 @@
     align-items: center;
     padding: 0 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 .header-section.shrink {
     height: 60px;
@@ -74,6 +75,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    z-index: 2;
 }
   
 .left-sidebar.visible {
@@ -106,6 +108,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    z-index: 2;
 }
 .right-sidebar.visible {
     right: 0;
@@ -139,6 +142,7 @@
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.3s;
+    z-index: 2;
 }
   
 .overlay.visible {
