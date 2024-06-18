@@ -33,7 +33,7 @@
         </a>
         <a href="#">
           <div class="img-category-container">
-            <img src="/img/category_review_img.png" />
+            <img src="/img/category_sale_img.png" />
             <div class="main-img-overlay">
               <div class="title">SALE</div>
             </div>
@@ -50,7 +50,7 @@
           <li>01 <img src="/img/category_best_img.png" alt="" /></li>
           <li>02 <img src="/img/category_new_img.png" alt="" /></li>
           <li>03 <img src="/img/haiba_img.png" alt="" /></li>
-          <li>04 <img src="/img/category_review_img.png" alt="" /></li>
+          <li>04 <img src="/img/category_sale_img.png" alt="" /></li>
           <li>05 <img src="/img/sushi_img.png" alt="" /></li>
         </ul>
       </div>
@@ -61,22 +61,22 @@
       <% if (typeof errorMessage !== 'undefined') { %>
       <div class="error-message"><%= errorMessage %></div>
       <% } %>
-      <h1>MAIN PAGE</h1>
-      <img src="/img/movie.jpg" alt="" style="width: 600px" />
-      Designed by Freepik
-      <div id="products">
+      <br />
+      <br />
+      <br />
+      <div class="grid-container">
         <% products.forEach(product => { %>
-        <div class="product">
-          <h2><%= product.name %></h2>
-          <p>Category: <%= product.category %></p>
-          <p>Price: <%= product.price %></p>
-          <p>Description: <%= product.description.replace(/\n/g, '<br />') %></p>
-          <% if (product.imageUrl) { %>
-          <img src="<%= product.imageUrl %>" alt="<%= product.name %>" />
-          <% } else { %>
-          <p>No image available</p>
-          <% } %>
-        </div>
+        <a href="/main/detail?id=<%= product.id %>">
+          <div class="new-card-container">
+            <img src="<%= product.imageUrl %>" />
+            <div class="img-overlay">
+              <div class="text-container">
+                <div class="product-name"><%= product.name %></div>
+                <div class="product-price"><%= product.price %></div>
+              </div>
+            </div>
+          </div>
+        </a>
         <% }); %>
       </div>
     </main>
