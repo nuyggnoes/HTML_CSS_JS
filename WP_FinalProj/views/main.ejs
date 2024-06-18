@@ -35,7 +35,7 @@
           <div class="img-category-container">
             <img src="/img/category_review_img.png" />
             <div class="main-img-overlay">
-              <div class="title">REVIEW KING</div>
+              <div class="title">SALE</div>
             </div>
           </div>
         </a>
@@ -47,22 +47,38 @@
       </div>
       <div class="slide_wrapper">
         <ul class="slides">
-          <li>01 <img src="https://i.pinimg.com/564x/88/31/c6/8831c6628b6a3fb79db75b39d8ef98d6.jpg" alt="" /></li>
-          <li>02 <img src="https://i.pinimg.com/564x/88/31/c6/8831c6628b6a3fb79db75b39d8ef98d6.jpg" alt="" /></li>
-          <li>03 <img src="https://i.pinimg.com/564x/88/31/c6/8831c6628b6a3fb79db75b39d8ef98d6.jpg" alt="" /></li>
-          <li>04 <img src="https://i.pinimg.com/564x/88/31/c6/8831c6628b6a3fb79db75b39d8ef98d6.jpg" alt="" /></li>
-          <li>05 <img src="https://i.pinimg.com/564x/88/31/c6/8831c6628b6a3fb79db75b39d8ef98d6.jpg" alt="" /></li>
+          <li>01 <img src="/img/category_best_img.png" alt="" /></li>
+          <li>02 <img src="/img/category_new_img.png" alt="" /></li>
+          <li>03 <img src="/img/haiba_img.png" alt="" /></li>
+          <li>04 <img src="/img/category_review_img.png" alt="" /></li>
+          <li>05 <img src="/img/sushi_img.png" alt="" /></li>
         </ul>
       </div>
       <p class="controls">
         <span class="prev" onclick="prevBtnClick()">prev</span>
         <span class="next" onclick="nextBtnClick()">next</span>
       </p>
-
+      <% if (typeof errorMessage !== 'undefined') { %>
+      <div class="error-message"><%= errorMessage %></div>
+      <% } %>
       <h1>MAIN PAGE</h1>
-      <h1><%= title %></h1>
       <img src="/img/movie.jpg" alt="" style="width: 600px" />
       Designed by Freepik
+      <div id="products">
+        <% products.forEach(product => { %>
+        <div class="product">
+          <h2><%= product.name %></h2>
+          <p>Category: <%= product.category %></p>
+          <p>Price: <%= product.price %></p>
+          <p>Description: <%= product.description.replace(/\n/g, '<br />') %></p>
+          <% if (product.imageUrl) { %>
+          <img src="<%= product.imageUrl %>" alt="<%= product.name %>" />
+          <% } else { %>
+          <p>No image available</p>
+          <% } %>
+        </div>
+        <% }); %>
+      </div>
     </main>
     <script>
       // 구글링

@@ -4,11 +4,13 @@ let path = require("path"); // 프로젝트 내부에서, 파일들의 상대경
 // let cookieParser = require("cookie-parser"); // 쿠키값을 다루기 위해 필요한 모듈
 // let logger = require("morgan"); // 로그를 보기 쉽게 찍기 위한 모듈
 
+const http = require("http");
+const session = require("express-session");
+
 // 라우팅을 해줄 경로 설정
 let indexRouter = require("./routes/index");
 let authRouter = require("./routes/auth");
 let mainRouter = require("./routes/main");
-const http = require("http");
 
 // 여기서 만든 app객체로 모든 요청·응답을 진행함
 let app = express();
@@ -23,6 +25,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(
+  session({
+    secret: "1234", // 고유한 비밀 키를 설정하세요
+    resave: false, // 세션을 변경하지 않아도 항상 저장할지 여부를 설정합니다.
+    saveUninitialized: true, // 초기화되지 않은 세션을 저장할지 여부를 설정합니다.
+    cookie: { secure: false }, // HTTPS에서만 사용할 경우 true로 설정
+  })
+);
 
 // 요청이 '/'이라면 indexRouter으로 연결을 한다는 의미
 // 위에서 설명했듯, indexRouter는 './routes/index'으로 설정되어있음
