@@ -11,6 +11,7 @@ const session = require("express-session");
 let indexRouter = require("./routes/index");
 let authRouter = require("./routes/auth");
 let mainRouter = require("./routes/main");
+let searchRouter = require("./routes/search");
 
 // 여기서 만든 app객체로 모든 요청·응답을 진행함
 let app = express();
@@ -40,6 +41,7 @@ app.use(
 // 따라서 요청이 '/'이면 './routes/index'로 경로를 잡음
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
+app.use("/search", searchRouter);
 app.use("/main", mainRouter);
 
 // 404에러를 잡아내고 예외처리해줌

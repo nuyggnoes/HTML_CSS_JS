@@ -1,0 +1,13 @@
+.main-section{
+    padding: 180px 80px;
+}
+#category-name{
+    text-align: center;
+    margin: 20px 0;
+}
+#total-count-container{
+    color:grey;
+}
+.item-count{
+    color:black;
+}

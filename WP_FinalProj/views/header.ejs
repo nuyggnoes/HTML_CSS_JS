@@ -25,7 +25,7 @@
           </form>
         </div>
         <div class="logo-container">
-          <div class="main-logo">MainLogo</div>
+          <a href="/" class="main-logo">MainLogo</a>
           <ul class="category-item-list">
             <li><a href="#">Best</a></li>
             <li><a href="#">Set-up</a></li>
@@ -70,14 +70,25 @@
     </div>
     <div class="right-sidebar">
       <h2>MYPAGE</h2>
+      <a href="/auth/login">로그인하러가기</a>
       <div class="btn-list-container">
-        <button type="button" class="order-select">
+        <button type="button" id="cart-product">
           <i class="bx bx-cart"></i>
           장바구니
         </button>
-        <button type="button" class="order-select">
+        <button type="button" id="liked-product">
           <i class="bx bx-heart"></i>
           관심상품
+        </button>
+      </div>
+      <div class="btn-list-container">
+        <button type="button" id="order-product">
+          <i class="bx bx-list-ul"></i>
+          주문조회
+        </button>
+        <button type="button" id="user-info">
+          <i class="bx bx-user"></i>
+          회원정보
         </button>
       </div>
     </div>
@@ -111,8 +122,17 @@
       leftSidebar.classList.remove("visible");
       overlay.classList.remove("visible");
     });
-    document.querySelector(".order-select").addEventListener("click", () => {
+    document.querySelector("#order-product").addEventListener("click", () => {
       console.log("Order selected");
+    });
+    document.querySelector("#cart-product").addEventListener("click", () => {
+      console.log("Cart product");
+    });
+    document.querySelector("#liked-product").addEventListener("click", () => {
+      console.log("Liked product");
+    });
+    document.querySelector("#user-info").addEventListener("click", () => {
+      console.log("User info");
     });
   </script>
 </html>

@@ -110,6 +110,15 @@
     flex-direction: column;
     z-index: 2;
 }
+.right-sidebar > a{
+    padding: 10px 20px;
+    border-radius: 0;
+    background-color: grey;
+    color: white;
+    border: none;
+    margin: 20px 0;
+    text-align: center;
+}
 .right-sidebar.visible {
     right: 0;
 }

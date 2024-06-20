@@ -15,7 +15,7 @@
     <%- include('header') %>
     <main class="main-section">
       <div id="img-category-list-section">
-        <a href="#">
+        <a href="/search?category=New">
           <div class="img-category-container">
             <img src="/img/category_new_img.png" />
             <div class="main-img-overlay">
@@ -67,12 +67,12 @@
       <div class="grid-container">
         <% products.forEach(product => { %>
         <a href="/main/detail?id=<%= product.id %>">
-          <div class="new-card-container">
+          <div class="card-container">
             <img src="<%= product.imageUrl %>" />
             <div class="img-overlay">
               <div class="text-container">
                 <div class="product-name"><%= product.name %></div>
-                <div class="product-price"><%= product.price %></div>
+                <div class="product-price"><%= product.price %>원</div>
               </div>
             </div>
           </div>
