@@ -1,11 +1,17 @@
 let express = require("express");
 let router = express.Router();
-const { Product } = require("../models/productModel");
+const { Product, findProductByCategory } = require("../models/productModel");
 
-router.get("/", function (req, res) {
+router.get("/", async function (req, res) {
   const category = req.query.category;
-  console.log(category);
-  res.render("search", { title: "hello search page!", category: category });
+  console.log(`Requested category: ${category}`);
+  try {
+    const products = await findProductByCategory(category);
+    console.log(products);
+    res.render("search", { category: category || null, products: products });
+  } catch (error) {
+    res.status(500).render("search", { errorMessage: "서버 오류가 발생했습니다." });
+  }
 });
 
 module.exports = router;

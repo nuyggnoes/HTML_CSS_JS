@@ -134,12 +134,12 @@
   }
 
   /* grid */
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    min-width: 700px;
-    margin: 0 110px;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  min-width: 700px;
+  margin: 0 110px;
 }
 
 .card-container {
@@ -183,7 +183,7 @@
 
 .product-name {
   color: white;
-  font-size: 0.9em;
+  font-size: 1.2vw;
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -192,6 +192,6 @@
 
 .product-price{
   color: white;
-  font-size: 0.6em;
+  font-size: 1vw;
   margin-top: 5px;
 }

@@ -71,22 +71,20 @@ sequelize
     console.error("Unable to create table:", error);
   });
 
-const createProduct = async (name, category, price, description, imageUrl) => {
+const findProductByCategory = async (category) => {
   try {
-    const user = await Product.create({ name, category, price, description, imageUrl });
-    return product;
-  } catch (error) {
-    throw new Error("Error creating user: " + error.message);
-  }
-};
-
-const findProductByCategoryt = async (category) => {
-  try {
-    const product = await Product.findOne({ where: { category } });
-    return product;
+    const products = await Product.findAll({
+      where: {
+        category: {
+          [Op.like]: `%${category}`,
+        },
+      },
+    });
+    console.log("Found products:", products);
+    return products;
   } catch (error) {
     throw new Error("Error finding user: " + error.message);
   }
 };
 
-module.exports = { Product, createProduct, findProductByCategoryt };
+module.exports = { Product, findProductByCategory };

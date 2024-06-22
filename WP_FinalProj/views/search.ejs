@@ -9,12 +9,71 @@
   <body>
     <%- include('header') %>
     <main class="main-section">
+      <% if (typeof category !== 'undefined') { %>
       <h1 id="category-name"><%= category %></h1>
+      <% } else { %>
+      <h1 id="category-name">Category Not Found</h1>
+      <% } %>
       <div id="search-option-container">
         <div id="total-count-container">
           <div>Total : <span class="item-count">11</span> items</div>
         </div>
-        <div id="search-sort"></div>
+        <div id="search-sort-list-container">
+          <ul id="search-sort-list">
+            <li><a href="#">상품명</a></li>
+            |
+            <li><a href="#">낮은가격</a></li>
+            |
+            <li><a href="#">높은가격</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="grid-container">
+        <div class="card-container">
+          <img src="/img/category_new_img.png" />
+          <div class="img-overlay">
+            <div class="text-container">
+              <div class="product-name">유 헤이리 네이쳐 바이오워싱 린넨셔츠</div>
+              <div class="product-price">42,900원</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-container">
+          <img src="/img/category_new_img.png" />
+          <div class="img-overlay">
+            <div class="text-container">
+              <div class="product-name">유 헤이리 네이쳐 바이오워싱 린넨셔츠</div>
+              <div class="product-price">42,900원</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-container">
+          <img src="/img/category_new_img.png" />
+          <div class="img-overlay">
+            <div class="text-container">
+              <div class="product-name">유 헤이리 네이쳐 바이오워싱 린넨셔츠</div>
+              <div class="product-price">42,900원</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-container">
+          <img src="/img/category_new_img.png" />
+          <div class="img-overlay">
+            <div class="text-container">
+              <div class="product-name">유 헤이리 네이쳐 바이오워싱 린넨셔츠</div>
+              <div class="product-price">42,900원</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-container">
+          <img src="/img/category_new_img.png" />
+          <div class="img-overlay">
+            <div class="text-container">
+              <div class="product-name">유 헤이리 네이쳐 바이오워싱 린넨셔츠</div>
+              <div class="product-price">42,900원</div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>
