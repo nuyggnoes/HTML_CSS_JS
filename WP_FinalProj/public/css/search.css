@@ -1,6 +1,3 @@
-:root{
-    --grey:#aeaeae;
-}
 .main-section{
     padding: 180px 80px;
 }
@@ -62,30 +59,30 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-  }
+}
   
-  .card-container:hover .img-overlay {
+.card-container:hover .img-overlay {
     opacity: 1;
-  }
+}
   
-  .text-container {
+.text-container {
     text-align: left;
     width: 100%;
     height: 30%;
     padding: 0 10px;
-  }
+}
   
-  .product-name {
+.product-name {
     color: white;
     font-size: 1.2vw;
     font-weight: bold;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
+}
   
-  .product-price{
+.product-price{
     color: white;
     font-size: 1vw;
     margin-top: 5px;
-  }
+}
