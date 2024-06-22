@@ -29,7 +29,7 @@
         </div>
       </div>
       <div id="grid-container">
-        <div class="card-container">
+        <!-- <div class="card-container">
           <img src="/img/category_new_img.png" />
           <div class="img-overlay">
             <div class="text-container">
@@ -73,8 +73,22 @@
               <div class="product-price">42,900원</div>
             </div>
           </div>
-        </div>
+        </div> -->
+        <% products.forEach(product => { %>
+        <a href="/search/detail?id=<%= product.id %>">
+          <div class="card-container">
+            <img src="<%= product.imageUrl %>" />
+            <div class="img-overlay">
+              <div class="text-container">
+                <div class="product-name"><%= product.name %></div>
+                <div class="product-price"><%= product.price %>원</div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <% }); %>
       </div>
     </main>
+    <%- include('footer') %>
   </body>
 </html>

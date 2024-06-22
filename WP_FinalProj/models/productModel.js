@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize");
+const { DataTypes, Op } = require("sequelize");
 const { sequelize } = require("../config/database");
 
 const Product = sequelize.define("Product", {
@@ -76,15 +76,29 @@ const findProductByCategory = async (category) => {
     const products = await Product.findAll({
       where: {
         category: {
-          [Op.like]: `%${category}`,
+          [Op.like]: `%${category}%`,
         },
       },
     });
-    console.log("Found products:", products);
     return products;
   } catch (error) {
+    console.error("Error finding products:", error);
     throw new Error("Error finding user: " + error.message);
   }
 };
 
-module.exports = { Product, findProductByCategory };
+const findProductById = async (id) => {
+  try {
+    const product = await Product.findOne({
+      where: {
+        id: id,
+      },
+    });
+    return product;
+  } catch (error) {
+    console.error("Error finding products:", error);
+    throw new Error("Error finding user: " + error.message);
+  }
+};
+
+module.exports = { Product, findProductByCategory, findProductById };

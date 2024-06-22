@@ -18,7 +18,7 @@
             </div>
           </div>
         </a>
-        <a href="#">
+        <a href="/search?category=Best">
           <div class="img-category-container">
             <img src="/img/category_best_img.png" />
             <div class="main-img-overlay">
@@ -26,7 +26,7 @@
             </div>
           </div>
         </a>
-        <a href="#">
+        <a href="/search?category=Sale">
           <div class="img-category-container">
             <img src="/img/category_sale_img.png" />
             <div class="main-img-overlay">
@@ -61,7 +61,7 @@
       <br />
       <div class="grid-container">
         <% products.forEach(product => { %>
-        <a href="/main/detail?id=<%= product.id %>">
+        <a href="/search/detail?id=<%= product.id %>">
           <div class="card-container">
             <img src="<%= product.imageUrl %>" />
             <div class="img-overlay">
