@@ -32,15 +32,15 @@
             <div class="img-overlay">
               <div class="text-container">
                 <div class="product-name"><%= product.name %></div>
-                <% if (product.category.includes('sale')) { %> <% const prices = product.price.split('-'); const
-                originalPrice = parseInt(prices[0].replace(/,/g, ''), 10); const salePrice =
-                parseInt(prices[1].replace(/,/g, ''), 10); %>
+                <% const prices = product.price.replace(/,/g, ''); const originalPrice = parseInt(prices, 10); const
+                discountRate = 0.10; const salePrice = Math.round(originalPrice * (1 - discountRate)); %> <% if
+                (product.category.includes('sale')) { %>
                 <div class="product-price">
                   <span class="original-price"><%= originalPrice.toLocaleString() %>원</span>
                   <span class="sale-price"><%= salePrice.toLocaleString() %>원</span>
                 </div>
                 <% } else { %>
-                <div class="product-price"><%= product.price %>원</div>
+                <div class="product-price"><%= originalPrice.toLocaleString() %>원</div>
                 <% } %>
               </div>
             </div>

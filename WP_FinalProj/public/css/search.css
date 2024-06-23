@@ -36,6 +36,7 @@
   .card-container {
     cursor: pointer;
     position: relative;
+    height: 100%;
   }
   
   .card-container img {
