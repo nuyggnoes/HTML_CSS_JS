@@ -195,3 +195,12 @@
   font-size: 1vw;
   margin-top: 5px;
 }
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+}
+.sale-price {
+  color: white;
+  font-weight: bold;
+}

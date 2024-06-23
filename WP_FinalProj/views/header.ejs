@@ -70,7 +70,12 @@
     </div>
     <div class="right-sidebar">
       <h2>MYPAGE</h2>
+      <% if (session && session.user) { %>
+      <p>환영합니다, <%= session.user.person_name %>님!</p>
+      <a href="/auth/logout">로그아웃</a>
+      <% } else { %>
       <a href="/auth/login">로그인하러가기</a>
+      <% } %>
       <div class="btn-list-container">
         <button type="button" id="cart-product">
           <i class="bx bx-cart"></i>

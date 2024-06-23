@@ -9,14 +9,10 @@
   <body>
     <%- include('header') %>
     <main class="main-section">
-      <% if (typeof category !== 'undefined') { %>
       <h1 id="category-name"><%= category %></h1>
-      <% } else { %>
-      <h1 id="category-name">Category Not Found</h1>
-      <% } %>
       <div id="search-option-container">
         <div id="total-count-container">
-          <div>Total : <span class="item-count">11</span> items</div>
+          <div>Total : <span class="item-count"><%= products.length%></span> items</div>
         </div>
         <div id="search-sort-list-container">
           <ul id="search-sort-list">
@@ -29,51 +25,6 @@
         </div>
       </div>
       <div id="grid-container">
-        <!-- <div class="card-container">
-          <img src="/img/category_new_img.png" />
-          <div class="img-overlay">
-            <div class="text-container">
-              <div class="product-name">유 헤이리 네이쳐 바이오워싱 린넨셔츠</div>
-              <div class="product-price">42,900원</div>
-            </div>
-          </div>
-        </div>
-        <div class="card-container">
-          <img src="/img/category_new_img.png" />
-          <div class="img-overlay">
-            <div class="text-container">
-              <div class="product-name">유 헤이리 네이쳐 바이오워싱 린넨셔츠</div>
-              <div class="product-price">42,900원</div>
-            </div>
-          </div>
-        </div>
-        <div class="card-container">
-          <img src="/img/category_new_img.png" />
-          <div class="img-overlay">
-            <div class="text-container">
-              <div class="product-name">유 헤이리 네이쳐 바이오워싱 린넨셔츠</div>
-              <div class="product-price">42,900원</div>
-            </div>
-          </div>
-        </div>
-        <div class="card-container">
-          <img src="/img/category_new_img.png" />
-          <div class="img-overlay">
-            <div class="text-container">
-              <div class="product-name">유 헤이리 네이쳐 바이오워싱 린넨셔츠</div>
-              <div class="product-price">42,900원</div>
-            </div>
-          </div>
-        </div>
-        <div class="card-container">
-          <img src="/img/category_new_img.png" />
-          <div class="img-overlay">
-            <div class="text-container">
-              <div class="product-name">유 헤이리 네이쳐 바이오워싱 린넨셔츠</div>
-              <div class="product-price">42,900원</div>
-            </div>
-          </div>
-        </div> -->
         <% products.forEach(product => { %>
         <a href="/search/detail?id=<%= product.id %>">
           <div class="card-container">
@@ -81,7 +32,16 @@
             <div class="img-overlay">
               <div class="text-container">
                 <div class="product-name"><%= product.name %></div>
+                <% if (product.category.includes('sale')) { %> <% const prices = product.price.split('-'); const
+                originalPrice = parseInt(prices[0].replace(/,/g, ''), 10); const salePrice =
+                parseInt(prices[1].replace(/,/g, ''), 10); %>
+                <div class="product-price">
+                  <span class="original-price"><%= originalPrice.toLocaleString() %>원</span>
+                  <span class="sale-price"><%= salePrice.toLocaleString() %>원</span>
+                </div>
+                <% } else { %>
                 <div class="product-price"><%= product.price %>원</div>
+                <% } %>
               </div>
             </div>
           </div>

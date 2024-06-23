@@ -67,7 +67,16 @@
             <div class="img-overlay">
               <div class="text-container">
                 <div class="product-name"><%= product.name %></div>
+                <% if (product.category.includes('sale')) { %> <% const prices = product.price.split('-'); const
+                originalPrice = parseInt(prices[0].replace(/,/g, ''), 10); const salePrice =
+                parseInt(prices[1].replace(/,/g, ''), 10); %>
+                <div class="product-price">
+                  <span class="original-price"><%= originalPrice.toLocaleString() %>원</span>
+                  <span class="sale-price"><%= salePrice.toLocaleString() %>원</span>
+                </div>
+                <% } else { %>
                 <div class="product-price"><%= product.price %>원</div>
+                <% } %>
               </div>
             </div>
           </div>
@@ -77,7 +86,6 @@
     </main>
     <%- include('footer') %>
     <script>
-      // 구글링
       let slides = document.querySelector(".slides"),
         slide = document.querySelectorAll(".slides li"),
         currentIdx = 0,

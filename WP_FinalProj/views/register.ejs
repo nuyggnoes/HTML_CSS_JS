@@ -13,22 +13,23 @@
         <div class="form-main-text">REGISTER</div>
         <form action="/auth/register" method="post">
           <div class="input-box">
-            <input type="text" name="username" placeholder="아이디" />
+            <input type="text" name="username" placeholder="아이디" required />
             <% if (typeof errorMessage !== 'undefined') { %>
             <div class="error-message"><%= errorMessage %></div>
             <% } %>
-            <input id="password" type="password" name="password" placeholder="비밀번호" />
+            <input id="password" type="password" name="password" placeholder="비밀번호" required />
             <input
               id="password_check"
               type="password"
               name="password_check"
               placeholder="비밀번호 확인"
               oninput="checkPassword()"
-              onfocusout="checkPassword()" />
+              onfocusout="checkPassword()"
+              required />
             <div id="pwdCheckText">비밀번호가 일치하지 않습니다.</div>
-            <input type="text" name="person_name" placeholder="이름" />
-            <input type="text" name="address" placeholder="주소" />
-            <input type="text" name="phone" placeholder="전화번호" />
+            <input type="text" name="person_name" placeholder="이름" required />
+            <input type="text" name="address" placeholder="주소" required />
+            <input type="text" name="phone" placeholder="전화번호" required />
             <input type="submit" value="REGISTER" />
           </div>
         </form>
