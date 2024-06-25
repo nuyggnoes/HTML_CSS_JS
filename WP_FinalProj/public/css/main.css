@@ -48,6 +48,7 @@
     font-style: italic;
 }
 #product-p{
+  min-width: 740px;
   text-align: center;
   width: 100%;
   margin: 100px 0 20px 0;
